@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <PackageId>ConsoleMenuClass</PackageId>
-    <Version>0.1.2</Version>
+    <Version>0.1.6</Version>
     <Authors>tardisgallifrey</Authors>
     <Title>A simple menu class to build Console App menus</Title>
     <Company>DaveDev</Company>
@@ -12,8 +12,9 @@
     <Description>
     A Class Library to build and use simple Console Menus in a Console App.  
     Utilizes EntityFrameworkCore InMemory Database.
+
+    This package is not ready for consumption.
     </Description>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

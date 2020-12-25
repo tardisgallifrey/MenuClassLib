@@ -8,27 +8,28 @@ namespace MenuClassLib
     public class MenuBuilder
     {
         int id = 1;
+        Menu menu = new Menu();
+        MenuContext db = new MenuContext();
 
         public MenuBuilder(string Menu_name)
         {
-            using var db = new MenuContext();
+            if(db.Menu.Count() > 0)
             {
-                if(db.Menu.Count() > 0)
-                {
-                    var max_record = db.Menu.Last();
-                    id = max_record.Id + 1;
-                }
-
-                var menu = new Menu()
-                {
-                    Id = id,
-                    Name = Menu_name
-                };
-
-                db.Menu.Add(menu);
+                var max_record = db.Menu.Last();
+                id = max_record.Id + 1;
             }
 
+            menu.Id = id;
+            menu.Name = Menu_name;
+
+            db.Menu.Add(menu);
         }
 
+        public void Show()
+        {
+            Console.Clear();
+            Console.WriteLine(menu.Id);
+
+        }
     }
 }
